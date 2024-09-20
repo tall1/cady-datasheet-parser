@@ -1,0 +1,2460 @@
+Easy Drive, Differential SAR ADCs
+
+
+
+FEATURES
+Throughput: 2 MSPS/1 MSPS/500 kSPS options INL: �1.0 LSB (�3.8 ppm) maximum Guaranteed 18-bit no missing codes
+Low power
+4.9 mW/MSPS, 2.4 mW at 500 kSPS, VDD only
+  8 mW/MSPS, 80 �W at 10 kSPS, 16 mW at 2 MSPS total SNR: 100.5 dB at fIN = 1 kHz, 99 dB at fIN = 100 kHz Oversampled SNR:
+103.5 dB at 1.0 MSPS, OSR =2
+130.5 dB at 1.9 kSPS, OSR = 1024
+THD: ?123 dB at fIN = 1 kHz; ?100 dB at fIN = 100 kHz SINAD: 89 dB at fIN = 1 MHz
+Easy Drive
+Greatly reduced input kickback
+Input current reduced to 0.5 ?A/MSPS
+Long acquisition phase, ?79% of cycle time at 1 MSPS Input span compression for single-supply operation Input overvoltage clamp protection sinks up to 50 mA
+Differential input range: �VREF
+VREF input range from 2.4 V to 5.1 V
+Single 1.8 V supply operation with 1.71 V to 5.5 V logic interface First conversion accurate, no latency/pipeline delay
+Fast conversion time allows low SPI clock rates
+SPI-/QSPI-/MICROWIRE-/DSP-compatible serial interface Ability to daisy-chain multiple ADCs
+Guaranteed operation: -40�C to +125�C
+10-lead packages: 3 mm � 3 mm LFCSP, 3 mm � 4.90 mm MSOP Pin compatible with AD4000/AD4004/AD4008 family APPLICATIONS
+Automatic test equipment
+Machine automation Medical equipment
+Battery-powered equipment Precision data acquisition systems
+FUNCTIONAL BLOCK DIAGRAM
+2V TO 5 v
+
+GENERAL DESCRIPTION
+The AD4003/AD4007/AD4011 are high accuracy, high speed, low power, 18-bit, Easy Drive, precision successive approximation register (SAR) analog-to-digital converters (ADCs). The high throughput allows both accurate capture of high frequency signals and decimation to achieve higher SNR, while also reducing antialiasing filter challenges.
+Easy Drive features reduce signal chain complexity and power consumption, and enable higher channel density. The reduced input current, particularly in high-Z mode, coupled with a long signal acquisition phase, eliminates the need for a dedicated high power, high speed ADC driver, which broadens the range of low power precision amplifiers that can drive these ADCs directly (see Figure 2). The input span compression feature enables the ADC driver amplifier and the ADC to operate off common supply rails without the need for a negative supply while preserving the full ADC code range. The input overvoltage clamp protects the ADC inputs against overvoltages, minimizes disturbance on the reference pin, and eliminates the need for external protection diodes.
+The low serial peripheral interface (SPI) clock rate (75 MHz for the AD4003 in turbo mode) reduces the digital input/output power consumption, broadens processor options, and simplifies the task of sending data across digital isolation.
+The SPI-compatible versatile serial interface features seven different programmable modes with an optional busy indicator. Using  the SDI input, several ADCs can be daisy-chained on a single
+3-wire bus. The AD4003/AD4007/AD4011 are compatible with
+1.8 V, 2.5 V, 3 V, and 5 V logic, using the separate supply, VIO.
+
+
+15
+
+12
+
+9
+
+6
+
+
+
+
+
+
+VREF
+VREF/2
+
+
+
+
+AD4003/ AD4007/ AD4011
+HIGH-Z MODE
+
+10�F
+
+1.8V
+
+REF	VDD
+
+
+
+
+
+TURBO
+
+3
+
+0
+
+�3
+VIO 1.8V TO 5V	6
+SDI
+
+0
+
+  VREF VREF/2
+0
+
+IN+
+
+
+IN�
+
+
+
+
+CLAMP
+
+
+
+
+
+SPAN
+
+18-BIT SAR ADC
+
+MODE
+SERIAL INTERFACE
+
+STATUS BITS
+
+SCK SDO
+CNV
+3- 
+WIRE OR
+4- WIRE
+SPI INTERFACE (DAISY CHAIN, CS)
+
+�9
+
+�12
+
+�15
+
+COMPRESSION
+
+
+
+GND
+
+Figure 1.
+
+�5	�4	�3	�2	�1	0	1	2	3	4	5
+INPUT DIFFERENTIAL VOLTAGE (V)
+Figure 2. Input Current vs. Input Differential Voltage
+
+
+
+Rev. C	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devicesforits use, norfor any infringements ofpatents orother rights ofthirdpartiesthatmay resultfromitsuse. Specificationssubject tochangewithout notice.No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarksandregisteredtrademarksarethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2016�2019 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+Nonvolatile Digital Potentiometer
+
+FEATURES	FUNCTIONAL BLOCK DIAGRAM
+
+10 k? and 100 k? resistance options Resistor tolerance: 8% maximum Wiper current: �6 mA
+Low temperature coefficient: 35 ppm/�C Wide bandwidth: 3 MHz
+Fast start-up time < 75 �s Linear gain setting mode
+Single- and dual-supply operation Independent logic supply: 1.8 V to 5.5 V
+Wide operating temperature: -40�C to +125�C 3 mm � 3 mm package option
+Qualified for automotive applications
+APPLICATIONS
+Portable electronics level adjustment
+LCD panel brightness and contrast controls Programmable filters, delays, and time constants Programmable power supplies
+
+GENERAL DESCRIPTION
+
+VLOGIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GND
+
+VDD	INDEP
+
+
+
+
+
+A1 W1 B1 A2 W2 B2
+
+
+
+VSS
+
+Figure 1.
+
+The AD5122A/AD5142A potentiometers provide a nonvolatile solution for 128-/256-position adjustment applications, offering guaranteed low resistor tolerance errors of �8% and up to �6 mA current density in the Ax, Bx, and Wx pins.
+The low resistor tolerance and low nominal temperature coefficient simplify open-loop applications as well as applications requiring tolerance matching.
+The linear gain setting mode allows independent programming of the resistance between the digital potentiometer terminals, through RAW and RWB the string resistors, allowing very accurate resistor matching.
+The high bandwidth and low total harmonic distortion (THD) ensure optimal performance for ac signals, making it suitable for filter design.
+The low wiper resistance of only 40 ? at the ends of the resistor array allows for pin-to-pin connection.
+The wiper values can be set through an I2C-compatible digital interface that is also used to read back the wiper register and EEPROM contents.
+The AD5122A/AD5142A are available in a compact, 16-lead, 3 mm � 3 mm LFCSP and a 16-lead TSSOP. The parts are
+guaranteed to operate over the extended industrial temperature range of -40�C to +125�C.
+
+Table 1. Family Models
+
+Model
+Channel
+Position
+Interface
+Package
+AD51231
+Quad
+128
+I2C
+LFCSP
+AD5124
+Quad
+128
+SPI/I2C
+LFCSP
+AD5124
+Quad
+128
+SPI
+TSSOP
+AD51431
+Quad
+256
+I2C
+LFCSP
+AD5144
+Quad
+256
+SPI/I2C
+LFCSP
+AD5144
+Quad
+256
+SPI
+TSSOP
+AD5144A
+Quad
+256
+I2C
+TSSOP
+AD5122
+Dual
+128
+SPI
+LFCSP/TSSOP
+AD5122A
+Dual
+128
+I2C
+LFCSP/TSSOP
+AD5142
+Dual
+256
+SPI
+LFCSP/TSSOP
+AD5142A
+Dual
+256
+I2C
+LFCSP/TSSOP
+AD5121
+Single
+128
+SPI/I2C
+LFCSP
+AD5141
+Single
+256
+SPI/I2C
+LFCSP
+1 Two potentiometers and two rheostats.
+
+
+
+Rev. B	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements ofpatents or other rightsofthird partiesthat mayresult fromitsuse. Specifications subjectto changewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarksandregisteredtrademarksaretheproperty oftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2012�2017 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+256-Position SPI/I2C Selectable
+Digital Potentiometer
+
+FEATURES	FUNCTIONAL BLOCK DIAGRAM
+
+256-position
+End-to-end resistance 5 k?, 10 k?, 50 k?, 100 k? Compact MSOP-10 (3 mm � 4.9 mm) package
+Pin selectable SPI/I2C compatible interface Extra package address decode pin AD0 Full read/write of wiper register
+Power-on preset to midscale Single supply 2.7 V to 5.5 V
+Low temperature coefficient 45 ppm/�C Low power, IDD = 8 ?A
+Wide operating temperature -40�C to +125�C
+
+
+
+
+SDI/SDA CLK/SCL
+DIS CS/AD0
+
+VDD
+
+
+
+
+
+
+
+
+
+
+
+GND
+
+SDO/NC
+
+
+A
+
+
+
+W
+
+
+
+B
+
+SDO output allows multiple device daisy-chaining Evaluation board available
+APPLICATIONS
+Mechanical potentiometer replacement in new designs Transducer adjustment of pressure, temperature, position,
+  chemical, and optical sensors RF amplifier biasing
+Gain control and offset adjustment
+
+GENERAL DESCRIPTION
+The AD5161 provides a compact 3 mm � 4.9 mm packaged solution for 256-position adjustment applications. These devices perform the same electronic adjustment function as mechanical potentiometers or variable resistors, with enhanced resolution, solid-state reliability, and superior low temperature coefficient performance.
+The wiper settings are controllable through a pin selectable SPI or I2C compatible digital interface, which can also be used to read back the wiper register content. When the SPI mode is used, the device can be daisy-chained (SDO to SDI), allowing several parts to share the same control lines. In the I2C mode, address pin AD0 can be used to place up to two devices on the same bus. In this same mode, command bits are available to reset the wiper position to midscale or to shut down the device into a state of zero power consumption.
+Operating from a 2.7 V to 5.5 V power supply and consuming less than 5 ?A allows for usage in portable battery-operated applications.
+
+Figure 1.
+
+
+PIN CONFIGURATION
+
+A B
+1
+2
+
+AD5161
+10
+9
+W
+VDD
+CS/ADO
+3
+TOP VIEW
+8
+DIS
+SDO/NC
+4
+(Not to Scale)
+7
+GND
+SDI/SDA
+5
+
+6
+CLK/SCL
+
+
+
+
+
+
+
+Figure 2.
+
+
+
+
+
+
+
+
+
+Rev. C	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements ofpatents orother rights ofthirdparties thatmay result fromits use. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks andregisteredtrademarks arethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2003�2015 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+256-Position,  Ultralow Power
+1.8 V Logic-Level Digital Potentiometer
+
+
+
+FEATURES
+Ultralow standby power IDD = 50 nA typical
+
+FUNCTIONAL BLOCK DIAGRAM
+V
+
+256-position
+End-to-end resistance 100 k? Logic high voltage 1.8 V Power supply 2.7 V to 5.5 V
+Low temperature coefficient 35 ppm/�C
+Compact thin 8-lead TSOT-8 (2.9 mm � 2.8 mm) package Simple 3-wire digital interface
+Wide operating temperature -40�C to +125�C
+Pin-to-pin compatible to AD5160 with CS inverted
+APPLICATIONS
+Battery-operated electronics adjustment Remote utilities meter adjustment
+
+
+
+
+ CS
+
+ SDI CLK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GND
+
+DD
+
+
+A
+
+
+
+W
+
+
+
+B
+
+
+
+
+
+
+Figure 1.
+
+Mechanical potentiometer replacement Transducer circuit adjustment
+
+PIN CONFIGURATION
+
+Automotive electronics adjustment Gain control and offset adjustment System calibration
+VCXO adjustment
+GENERAL OVERVIEW
+The AD5165 provides a compact 2.9 mm � 2.8 mm packaged
+ 
+W VDD GND
+CLK
+
+
+
+
+
+
+Figure 2.
+
+A B CS SDI
+
+solution for 256-position adjustment applications. These devices perform the same electronic adjustment function as mechanical potentiometers or variable resistors, with enhanced resolution, solid-state reliability, and superior low temperature coefficient performance. The AD5165�s supply voltage requirement is 2.7 V to 5.5 V, but its logic voltage requirement is 1.8 V to VDD. The AD5165 consumes very low quiescent power during standby mode and is ideal for battery-operated applications.
+Wiper settings are controlled through a simple 3-wire interface. The interface is similar to the SPI� digital interface except for the inverted chip-select function that minimizes logic power con- sumption in the idling state. The resistance between the wiper and either endpoint of the fixed resistor varies linearly with respect to the digital code transferred into the wiper register.
+Operating from a 2.7 V to 5.5 V power supply and consuming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note:
+
+TYPICAL APPLICATION
+
+
+
+
+WIDE TERMINAL VOLTAGE RANGE:
+
+0V < VA,VB,VW < 5V
+
+
+
+
+Figure 3.
+
+less than 50 nA typical standby power allows use in battery- operated portable or remote utility device applications.
+
+The terms digital potentiometer, RDAC, and VR are used interchangeably.
+
+
+
+
+
+Rev. 0
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements of patents or other rights of third parties that may result from its use. Specifications subject to change without notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks and registered trademarks are the property of their respective owners.
+
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700	www.analog.com Fax: 781.326.8703 � 2004 Analog Devices, Inc. All rights reserved.
+             Dual, 10-Bit nanoDAC with 2 ppm/�C Reference, SPI Interface
+
+
+
+FEATURES	FUNCTIONAL BLOCK DIAGRAM
+
+Low drift 2.5 V reference: 2 ppm/�C typical Tiny package: 3 mm � 3 mm, 16-lead LFCSP
+Total unadjusted error (TUE): �0.1% of FSR maximum Offset error: �1.5 mV maximum
+Gain error: �0.1% of FSR maximum
+High drive capability: 20 mA, 0.5 V from supply rails User selectable gain of 1 or 2 (GAIN pin)
+Reset to zero scale or midscale (RSTSEL pin)
+1.8 V logic compatibility
+50 MHz SPI with readback or daisy chain
+
+VDD
+
+
+GND
+
+VREF
+
+
+
+
+
+
+
+
+VOUTA
+
+
+VOUTB
+
+Low glitch: 0.5 nV-sec Low power: 3.3 mW at 3 V
+
+POWER-ON RESET
+GAIN =
+�1/�2
+2.7 V to 5.5 V power supply
+-40�C to +105�C temperature range
+
+ 
+LDAC RESET
+RSTSEL
+Figure 1.
+GAIN
+APPLICATIONS
+
+Optical transceivers
+
+Base station power amplifiers
+
+Process control (PLC I/O cards)
+
+Industrial automation
+
+Data acquisition systems
+
+GENERAL DESCRIPTION
+
+
+The AD5313R, a member of the nanoDAC� family, is a low power, dual, 10-bit buffered voltage output digital-to-analog converter (DAC). The device includes a 2.5 V, 2 ppm/�C internal reference (enabled by default) and a gain select pin giving a full-scale output of 2.5 V (gain = 1) or 5 V (gain = 2). The AD5313R operates from a single 2.7 V to 5.5 V supply, is guaranteed monotonic by design, and exhibits less than 0.1% FSR gain error and 1.5 mV offset error performance. The device is available in a 3 mm �
+3 mm LFCSP package and a TSSOP package.
+The AD5313R also incorporates a power-on reset circuit and a RSTSEL pin that ensures that the DAC outputs power up to zero scale or midscale and remain there until a valid write occurs. The part contains a per channel power-down feature that reduces the current consumption of the device to 4 ?A at 3 V while in power-down mode.
+The AD5313R employs a versatile serial peripheral interface (SPI) that operates at clock rates up to 50 MHz, and the device contains a VLOGIC pin that is intended for 1.8 V/3 V/5 V logic.
+
+Table 1. Related Devices
+
+Interface
+Reference
+12-Bit
+10-Bit
+SPI
+Internal
+External
+AD5687R
+AD5687
+N/A
+AD53131
+I2C
+Internal
+External
+AD5697R
+N/A
+AD5338R1
+AD53381
+1 The AD5313R and the AD5313 are not pin-to-pin or software compatible; likewise, the AD5338R and the AD5338 are not pin-to-pin or software compatible.
+
+PRODUCT HIGHLIGHTS
+1. Precision DC Performance.
+Total unadjusted error: �0.1% of FSR maximum Offset error: �1.5 mV maximum
+Gain error: �0.1% of FSR maximum
+2. Low Drift 2.5 V On-Chip Reference.
+2 ppm/�C typical temperature coefficient
+5 ppm/�C maximum temperature coefficient
+3. Two Package Options.
+3 mm � 3 mm, 16-lead LFCSP 16-lead TSSOP
+
+
+
+
+
+Rev. B	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements ofpatents or other rights ofthirdparties thatmay result fromits use. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks andregisteredtrademarks arethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2013�2017 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+Dual 12-Bit nanoDAC with
+�10 ppm/�C On-Chip Reference
+
+
+
+FEATURES
+Low power, smallest pin-compatible, dual nanoDAC: 12 bits User-selectable external or internal reference
+External reference default
+  On-chip 2.5 V, �10 ppm/�C reference 10-lead MSOP
+4.5 V to 5.5 V power supply Guaranteed monotonic by design Power-on reset to zero scale
+Per channel power-down Serial interface up to 50 MHz
+Hardware LDAC and CLR functions
+ENHANCED PRODUCT FEATURES
+Supports defense and aerospace applications (AQEC) Extended temperature range: -55�C to +105�C Controlled manufacturing baseline
+One assembly/test site One fabrication site
+Enhanced product change notification Qualification data available on request
+APPLICATIONS
+Process control
+Data acquisition systems
+GENERAL DESCRIPTION
+The AD5623R-EP, a member of the nanoDAC� family, is a low power, dual 12-bit buffered voltage output digital-to-analog converter (DAC) that operates from a single 4.5 V to 5.5 V supply and is guaranteed monotonic by design.
+
+The AD5623R-EP has an on-chip 2.5 V reference giving a maximum full-scale output of 5 V. The on-chip reference is off at power-up, allowing the use of an external reference.
+The AD5623R-EP incorporates a power-on reset circuit that ensures that the output of the DACs powers up to 0 V and remains there until a valid write takes place. The AD5623R-EP contains a power-down feature that reduces the current consumption of the device to 0.48 ?A at 5 V and provides software-selectable output loads while in power-down mode.
+The low power consumption of this device in normal operation makes it ideally suited to portable, battery-operated equipment.
+The AD5623R-EP uses a versatile, 3-wire serial interface that operates at clock rates of up to 50 MHz, and is compatible with standard SPI, QSPI�, MICROWIRE�, and DSP interface standards. The on-chip precision output amplifier enables rail- to-rail output swing to be achieved. Additional application and technical information can be found in the AD5623R data sheet.
+PRODUCT HIGHLIGHTS
+1. Dual 12-Bit DAC.
+2. On-Chip 2.5 V, �10 ppm/�C Reference.
+3. Available in 10-Lead MSOP.
+4. Low Power. Typically consumes 1.25 mW at 5 V. 4.5 ?s maximum settling time.
+Table 1. Related Device
+
+Part No.
+Description
+AD5623R
+2.7 V to 5.5 V, dual 12-bit nanoDAC, with external reference
+
+FUNCTIONAL BLOCK DIAGRAM
+VDD	VREFIN/VREFOUT
+
+
+
+VOUTA
+
+
+VOUTB
+
+
+
+
+
+
+LDAC
+
+CLR
+
+GND
+Figure 1.
+
+
+
+Rev. A	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements ofpatents orother rights ofthirdparties thatmay result fromits use. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks andregisteredtrademarks arethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2014�2015 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+12-Bit ADC in 20-Lead LFCSP/TSSOP
+
+FEATURES	FUNCTIONAL BLOCK DIAGRAM
+
+I2C-compatible serial interface supports standard and fast modes
+Ultra low power: 90 �W typical at 3 V in fast mode Specified for VDD of 2.7 V to 5.25 V
+On-chip accurate 2.5 V reference, 5 ppm/�C typical drift 4 single-ended analog input channels
+ALERT function BUSY function Autocycle mode
+Wide input bandwidth
+68 dB signal-to-noise ratio (SNR) typical at input frequency of 1 kHz
+Flexible power/throughput rate management No pipeline delays
+Power-down mode
+550 nA typical at VDD = 5.25 V 435 nA typical at VDD = 3 V
+20-lead LFCSP and TSSOP packages Temperature range: -40�C to +125�C
+APPLICATIONS
+Battery-powered systems Personal digital assistants Medical instruments Mobile communications
+Instrumentation and control systems Data acquisition systems
+Optical sensors Diagnostic/monitoring functions
+GENERAL DESCRIPTION
+
+
+
+
+
+
+VIN0 VIN1 VIN2 VIN3
+
+
+MUX
+
+
+
+OUT
+
+
+ADCIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GND
+
+
+VDD
+
+REFIN/
+REFOUT REGCAP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALERT/BUSY/ GPO2 GND GPO0
+Figure 1.
+
+The AD7091R-5 is a 12-bit, multichannel, ultra low power, succes- sive approximation analog-to-digital converter (ADC). The AD7091R-5 operates from a single 2.7 V to 5.25 V power supply and typically consumes only 24 �A at a 3 V supply in fast mode.
+The AD7091R-5 provides a 2-wire serial interface compatible with I2C interfaces. The conversion process can be controlled by a sample mode via the CONVST/GPO1 pin, an autocycle mode selected through software control, or a command mode in which conversions occur across I2C write operations.
+The device contains a wide bandwidth track-and-hold amplifier that can handle input frequencies up to 1.5 MHz. The AD7091R-5 also features an on-chip conversion clock, an on-chip accurate
+2.5 V reference, and a programmable out of bounds user alert function.
+
+The AD7091R-5 offers four single-ended analog input channels with a channel sequencer that allows a preprogrammed selection of channels to be converted sequentially.
+The AD7091R-5 uses advanced design techniques to achieve ultra low power dissipation without compromising performance. It also features flexible power management options. An on-chip configuration register allows the user to set up different operating conditions. These include power management, alert functionality, busy indication, channel sequencing, and general-purpose output pins. The MUXOUT and ADCIN pins allow signal conditioning of the multiplexer output before acquisition by the ADC.
+
+
+
+Rev. A	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devicesforits use, norfor any infringements ofpatents orother rights ofthirdparties thatmay resultfromitsuse. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarksandregisteredtrademarksarethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2015�2018 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+Low Power, Buffered 24-Bit
+Sigma-Delta ADC
+
+
+
+FEATURES
+Power
+
+FUNCTIONAL BLOCK DIAGRAM
+
+Supply: 2.5 V to 5.25 V operation Normal: 75 ?A max
+Power-down: 1 ?A max
+RMS noise: 1.1 ?V at 9.5 Hz update rate
+19.5-bit p-p resolution (22 bits effective resolution) Integral nonlinearity: 3.5 ppm typical Simultaneous 50 Hz and 60 Hz rejection
+
+
+
+
+
+
+
+
+AIN(+) AIN(�)
+
+
+
+VDD
+
+GND
+
+VDD
+
+
+
+
+
+BUF
+
+REFIN(+) REFIN(�)
+
+
+
+
+
+
+?-?
+ADC
+
+
+
+
+CLOCK
+
+
+
+
+SERIAL INTERFACE
+
+
+
+
+
+DOUT/RDY DIN
+SCLK
+CS
+
+Internal clock oscillator Rail-to-rail input buffer VDD monitor channel
+Temperature range: �40�C to +105�C
+
+GND
+
+AD7791
+
+Figure 1.
+
+
+
+
+
+04227-0-001
+
+10-lead MSOP
+
+INTERFACE
+3-wire serial
+SPI�, QSPI�, MICROWIRE�, and DSP compatible Schmitt trigger on SCLK
+
+APPLICATIONS
+Smart transmitters Battery applications Portable instrumentation Sensor measurement
+Temperature measurement Pressure measurement Weigh scales
+4 to 20 mA loops
+
+GENERAL DESCRIPTION
+The AD7791 is a low power, complete analog front end for low frequency measurement applications. It contains a low noise 24-bit ?-? ADC with one differential input that can be buffered or unbuffered.
+The device operates from an internal clock. Therefore, the user does not have to supply a clock source to the device. The output data rate from the part is software programmable and can be varied from 9.5 Hz to 120 Hz, with the rms noise equal to
+1.1 ?V at the lower update rate. The internal clock frequency can be divided by a factor of 2, 4, or 8, which leads to a reduc- tion in the current consumption. The update rate, cutoff fre- frequency, and settling time will scale with the clock frequency.
+The part operates with a power supply from 2.5 V to 5.25 V. When operating from a 3 V supply, the power dissipation for the part is 225 ?W maximum. It is housed in a 10-lead MSOP.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rev. A	Document Feedback
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no re- sponsibility is assumed by Analog Devices for its use, nor for any infringements of patents or other rights ofthirdparties thatmay result fromits use. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks andregisteredtrademarks arethepropertyoftheirrespectiveowners.
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700 �2004�2013 Analog Devices, Inc. All rights reserved. Technical Support	www.analog.com
+Low Cost, High Speed Differential Amplifier
+
+
+
+FEATURES
+High speed
+350 MHz, ?3 dB bandwidth 1200 V/?s slew rate
+Resistor set gain
+Internal common-mode feedback
+Improved gain and phase balance: ?68 dB @ 10 MHz Separate input to set the common-mode output voltage Low distortion: ?99 dBc SFDR @ 5 MHz, 800 ? load
+Low power: 10.7 mA @ 5 V
+Power supply range: 2.7 V to 5.5 V Fully AEC-Q100 qualified (AD8132W)
+
+APPLICATIONS
+Low power differential ADC drivers Differential gain and differential filtering Video line drivers
+Differential in/out level shifting
+Single-ended input to differential output drivers Active transformers
+Automotive driver assistance Automotive infotainment
+
+GENERAL DESCRIPTION
+The AD8132 is a low cost differential or single-ended input to differential output amplifier with resistor set gain. The AD8132 is a major advancement over op amps for driving differential input ADCs or for driving signals over long lines. The AD8132 has a unique internal feedback feature that provides output gain and phase matching balanced to ?68 dB at 10 MHz, suppressing harmonics and reducing radiated EMI.
+Manufactured using the next-generation of Analog Devices, Inc., XFCB bipolar process, the AD8132 has a ?3 dB bandwidth of 350 MHz and delivers a differential signal with ?99 dBc SFDR at 5 MHz, despite its low cost. The AD8132 eliminates the need for a transformer with high performance ADCs, preserving the low frequency and dc information. The common-mode level of the differential output is adjustable by applying a voltage on the VOCM pin, easily level shifting the input signals for driving single- supply ADCs. Fast overload recovery preserves sampling accuracy.
+
+CONNECTION DIAGRAM
+
+
+AD
+813
+2
+
+�IN
+1
+
+8
++IN
+VOCM
+2
+
+7
+NC
+V+
+3
+
+6
+V�
++OUT
+4
+
+5
+�OUT
+NC = NO CONNECT
+Figure 1.
+
+The AD8132 is also used as a differential driver for the trans- mission of high speed signals over low cost twisted pair or coaxial cables. The feedback network can be adjusted to boost the high frequency components of the signal. The AD8132 is used for either analog or digital video signals or for other high speed data trans- mission. The AD8132 is capable of driving either a Category 3 or Category 5 twisted pair or coaxial cable with minimal line attenuation. The AD8132 has considerable cost and performance improvements over discrete line driver solutions.
+Differential signal processing reduces the effects of ground noise that plagues ground-referenced systems. The AD8132 can be used for differential signal processing (gain and filtering) throughout a signal chain, easily simplifying the conversion between differential and single-ended components.
+The AD8132W is the automotive grade version, qualified for 125�C operation per the AEC-Q100. See the Automotive Products section for more details.
+The AD8132 is available in both 8-lead SOIC and 8-lead MSOP packages for operation over the extended industrial temperature range of -40�C to +125�C.
+6
+
+
+3
+
+
+0
+
+
+�3
+
+
+�6
+
+
+�9
+
+
+�12
+1
+
+
+
+10	100	1k FREQUENCY (MHz)
+Figure 2. Large Signal Frequency Response
+
+
+
+
+Rev. I
+Information furnished by Analog Devices is believed to be accurate and reliable. However, no responsibility is assumed by Analog Devices for its use, nor for any infringements of patents orother rights ofthirdparties that mayresult fromits use. Specificationssubject tochangewithout notice. No license is granted by implication or otherwise under any patent or patent rights of Analog Devices. Trademarks andregisteredtrademarks arethepropertyoftheirrespectiveowners.
+
+
+
+
+One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. Tel: 781.329.4700	www.analog.com
+Fax: 781.461.3113 �2000�2009 Analog Devices, Inc. All rights reserved.
+
+
+
+
+
+
+
+INA225-Q1 AEC-Q100, 36-V, Bidirectional Current Sense Amplifier With Four Pin- Selectable Gain Settings
+
+
+1 Features
+� AEC-Q100 qualified:
+� Temperature grade 1: �40 �C to +125 �C
+� HBM ESD classification 2
+� CDM ESD classification C4B
+� Functional Safety-Capable
+� Documentation available to aid functional safety system design
+� Wide common-mode range: 0 V to 36 V
+� Offset voltage: �150 ?V (maximum, all gains
+� Offset voltage drift: 0.5 ?V/�C (maximum)
+� Gain accuracy, over temperature (maximum):
+� 25 V/V, 50 V/V: �0.15%
+� 100 V/V: �0.2%
+� 200 V/V: �0.3%
+� 10-ppm/�C gain drift
+� Bandwidth: 250 kHz (gain = 25 V/V)
+� Programmable gains:
+�   G1 = 25 V/V
+�   G2 = 50 V/V
+�   G3 = 100 V/V
+�   G4 = 200 V/V
+� Quiescent current: 350 ?A (maximum)
+� Package: 8-pin VSSOP
+2 Applications
+� Automotive lighting
+� Body control module
+� Motor control
+� Valve control
+� Cluster
+� Central control module
+3 
+Description
+The INA225-Q1 is a voltage-output, current-sense amplifier that senses drops across current-sensing resistors at common-mode voltages that vary from 0 V to 36 V, independent of the supply voltage. The device is a bidirectional, current-shunt monitor that allows an external reference to be used to measure current flowing in both directions across a current- sensing resistor.
+Four discrete gain levels are selectable using the two gain-select terminals (GS0 and GS1) to program gains of 25 V/V, 50 V/V, 100 V/V, and 200 V/V. The low-offset, zero-drift architecture and precision gain values enable current-sensing with maximum drops across the shunt as low as 10 mV of full-scale, while maintaining very high accuracy measurements over the entire operating temperature range.
+The device operates from a single 2.7V to 36V power supply, drawing a maximum of 350   ?A of supply current. The device is specified over the extended operating temperature range of �40 �C to
++125 �C, and is offered in a VSSOP-8 package.
+Device Information (1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+INA225-Q1
+VSSOP (8)
+3.00 mm x 3.00 mm
+(1)	For all available packages, see the package option addendum at the end of the data sheet.
+
+
+
+
+
+
+
+
+
+
+Typical Application
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+ISO7740, ISO7741, ISO7742
+SLLSEP4G � MARCH 2016 � REVISED FEBRUARY 2020
+
+ISO774x High-Speed, Robust-EMC Reinforced and Basic Quad-Channel Digital Isolators
+
+1 Features
+� 100 Mbps data rate
+� Robust isolation barrier:
+� >100-year projected lifetime at 1500 VRMS working voltage
+� Up to 5000 VRMS isolation rating
+� Up to 12.8 kV surge capability
+� �100 kV/?s typical CMTI
+� Wide supply range: 2.25 V to 5.5 V
+� 2.25-V to 5.5-V level translation
+� Default output high (ISO774x) and low
+(ISO774xF) options
+� Wide temperature range: �55�C to +125�C
+� Low power consumption, typical 1.5 mA per channel at 1 Mbps
+� Low propagation delay: 10.7 ns typical (5-V Supplies)
+� Robust electromagnetic compatibility (EMC)
+� System-level ESD, EFT, and surge immunity
+� �8 kV IEC 61000-4-2 contact discharge protection across isolation barrier
+� Low emissions
+� Wide-SOIC (DW-16) and QSOP (DBQ-16) package options
+� Automotive version available: ISO774x-Q1
+� Safety-related certifications:
+�   DIN VDE V 0884-11:2017-01
+� UL 1577 component recognition program
+� CSA, CQC, and TUV certifications
+
+2 Applications
+� Industrial automation
+� Motor control
+3 
+Description
+The ISO774x devices are high-performance, quad- channel digital isolators with 5000 VRMS (DW package) and 3000 VRMS (DBQ package) isolation ratings per UL 1577. This family includes devices with reinforced insulation ratings according to VDE, CSA, TUV and CQC. The ISO7741B device is designed for applications that require basic insulation ratings only.
+The ISO774x devices provide high electromagnetic immunity and low emissions at low power consumption, while isolating CMOS or LVCMOS digital I/Os. Each isolation channel has a logic input and output buffer separated by a double capacitive silicon dioxide (SiO2) insulation barrier. These devices come with enable pins which can be used to put the respective outputs in high impedance for multi-master driving applications and to reduce power consumption. The ISO7740 device has all four channels in the same direction, the ISO7741 device has three forward and one reverse-direction channels, and the ISO7742 device has two forward and two reverse-direction channels. If the input power or signal is lost, default output  is high for devices without suffix F and low for devices with suffix F. See the Device Functional Modes section for further details.
+Device Information(1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+ISO7740 ISO7741 ISO7742
+SOIC (DW)
+10.30 mm � 7.50 mm
+
+SSOP (DBQ)
+4.90 mm � 3.90 mm
+ISO7741B
+SOIC (DW)
+10.30 mm � 7.50 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+Simplified Schematic
+
+
+V
+
+� Power supplies
+� Solar inverters
+� Medical equipment
+
+
+
+
+
+INx
+
+VCCI
+
+
+
+Series Isolation Capacitors
+
+
+
+CCO
+
+
+
+
+
+OUTx
+
+
+ENx
+
+
+GNDI
+
+GNDO
+Copyright � 2016, Texas Instruments Incorporated
+
+
+VCCI=Input supply, VCCO=Output supply GNDI=Input ground, GNDO=Output ground
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+
+
+
+
+
+
+LM61460-Q1 Automotive 3-V to 36-V, 6-A, Low EMI Synchronous Step-Down Converter
+
+
+1 Features
+� AEC-Q100 qualified for automotive applications
+� Temperature grade 1: �40�C to +150�C, TJ
+� Functional Safety-Capable
+� Documentation available to aid functional safety system design
+� Optimized for ultra low EMI requirements
+� Hotrod� package and parallel input path minimize switch node ringing
+� Spread spectrum reduces peak emissions
+� Adjustable SW node rise time
+� Designed for automotive applications
+� Supports 42-V automotive load dump
+� �1% total output regulation accuracy
+� VOUT adjustable from 1 V to 95% of VIN
+� 0.4-V dropout with 4-A load (typical)
+� High efficiency power conversion at all loads
+� 7-�A no load current at 13.5 VIN, 3.3 VOUT
+� 83% PFM efficiency at 1-mA, 13.5 VIN, 5 VOUT
+� External bias option for improved efficiency
+� Suitable for scalable power supplies
+� Pin compatible with:
+� LM61440-Q1 (36 V, 4 A, adjustable fSW)
+� LM62440-Q1 (36 V, 4 A, fixed fSW)
+� LMQ61460-Q1 (36 V, 6 A, internal caps)
+2 Applications
+� Automotive infotainment and cluster: head unit, media hub, USB charge, display
+� Automotive ADAS and body electronics
+3 
+Description
+The LM61460-Q1 is an automotive-focused, high-performance, DC-DC synchronous step-down converter. With integrated high-side and low-side MOSFETs, up to 6 A of output current is delivered over a wide input range of 3.0 V to 36 V; tolerant of 42 V, easing input surge protection design. The LM61460-Q1 implements soft recovery from dropout eliminating overshoot on the output.
+The LM61460-Q1 is specifically designed for minimal EMI. The device incorporates pseudo-random spread spectrum, adjustable SW node rise time, low-EMI VQFN-HR package featuring low switch node ringing, and optimized pinout for ease of use. The switching frequency can be set or synchronized between
+200 kHz and 2.2 MHz to avoid noise sensitive frequency bands. In addition the frequency can be selected for improved efficiency at low operating frequency or smaller solution size at high operating frequency.
+Auto-mode enables frequency foldback when operating at light loads, allowing an unloaded current consumption of only 7 �A (typical) and high light load efficiency. Seamless transition between PWM and PFM modes, along with very low MOSFET ON resistances and an external bias input, ensures exceptional efficiency across the entire load range.
+Device Information
+PART NUMBER
+PACKAGE(1)
+BODY SIZE (NOM)
+LM61460-Q1
+VQFN-HR (14)
+4.00 mm � 3.50 mm
+(1)	For all available packages, see the orderable addendum at the end of the data sheet.
+
+100%
+
+95%
+
+90%
+
+85%
+
+80%
+
+75%
+
+70%
+
+65%
+
+60%
+0.0001	0.001	0.01	0.1 0.2 0.5 1  2 3  5 710
+
+Conducted EMI: VOUT = 5 V, IOUT = 5 A
+
+Load Current (A)
+Efficiency: VOUT = 5 V, FSW = 400 kHz
+
+LMK04000, LMK04001, LMK04002, LMK04010 LMK04011, LMK04031, LMK04033
+www.ti.com	SNOSAZ8J � SEPTEMBER 2008 � REVISED SEPTEMBER 2011
+
+LMK04000 Family Low-Noise Clock Jitter Cleaner with Cascaded PLLs
+Check for Samples: LMK04000, LMK04001, LMK04002, LMK04010, LMK04011, LMK04031, LMK04033
+FEATURES
+� Cascaded PLLatinum� PLL Architecture	�	Support Clock Rates up to 1080 MHz
+� PLL1	�	Default Clock Output (CLKout2) at power up
+� Phase Detector Rate of up to 40 MHz	�	Five Dedicated Channel Divider and Delay
+
+� Integrated Low-Noise Crystal Oscillator
+
+Blocks
+
+Circuit	�	Pin Compatible Family of Clocking Devices
+� Dual Redundant Input Reference Clock	�	Industrial Temperature Range: -40�C to +85�C with LOS	�	3.15V to 3.45V Operation
+� PLL2	�	Package: 48 Pin WQFN (7.0 x 7.0 x 0.8 mm)
+� Normalized [1 Hz] PLL Noise Floor of -
+224 dBc/Hz	APPLICATIONS
+� Phase Detector Rate up to 100 MHz	�	Data Converter Clocking
+� Input Frequency-Doubler	�	Wireless Infrastructure
+� Integrated Low-Noise VCO	�	Networking, SONET/SDH, DSLAM
+� Ultra-Low RMS Jitter Performance	�	Medical
+� 150 fs RMS Jitter (12 kHz � 20 MHz)	�	Military / Aerospace
+� 200 fs RMS Jitter (100 Hz � 20 MHz)	�	Test and Measurement
+� LVPECL/2VPECL, LVDS, and LVCMOS outputs	�	Video
+DESCRIPTION
+The LMK04000 family of precision clock conditioners provides low-noise jitter cleaning, clock multiplication and distribution without the need for high-performance voltage controlled crystal oscillators (VCXO) module. Using a cascaded PLLatinum� architecture combined with an external crystal and varactor diode, the LMK04000 family provides sub-200 femtosecond (fs) root mean square (RMS) jitter performance.
+The cascaded architecture consists of two high-performance phase-locked loops (PLL), a low-noise crystal oscillator circuit, and a high-performance voltage controlled oscillator (VCO). The first PLL (PLL1) provides a low- noise jitter cleaner function while the second PLL (PLL2) performs the clock generation. PLL1 can be configured to either work with an external VCXO module or use the integrated crystal oscillator with an external crystal and a varactor diode. When used with a very narrow loop bandwidth, PLL1 uses the superior close-in phase noise (offsets below 50 kHz) of the VCXO module or the crystal to clean the input clock. The output of PLL1 is used as the clean input reference to PLL2 where it locks the integrated VCO. The loop bandwidth of PLL2 can be optimized to clean the far-out phase noise (offsets above 50 kHz) where the integrated VCO outperforms the VCXO module or crystal used in PLL1.
+The LMK04000 family features dual redundant inputs, five differential outputs, and an optional default-clock upon power up. The input block is equipped with loss of signal detection and automatic or manual selection of the reference clock. Each clock output consists of a programmable divider, a phase synchronization circuit, a programmable delay, and an LVDS, LVPECL, or LVCMOS output buffer. The default startup clock is available on CLKout2 and it can be used to provide an initial clock for the field-programmable gate array (FPGA) or microcontroller that programs the jitter cleaner during the system power up sequence.
+
+
+
+
+
+Please be aware that an important notice concerning availability, standard warranty, and use in critical applications of Texas Instruments semiconductor products and disclaimers thereto appears at the end of this data sheet.
+PLLatinum is a trademark of Texas Instruments.
+All other trademarks are the property of their respective owners.
+PRODUCTION DATA information is current as of publication date.	Copyright � 2008�2011, Texas Instruments Incorporated
+Products conform to specifications per the terms of the Texas
+Instruments standard warranty. Production processing does not necessarily include testing of all parameters.
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+LMP7721
+SNOSAW6E � JANUARY 2008 � REVISED DECEMBER 2014
+
+LMP7721 3-Femtoampere Input Bias Current Precision Amplifier
+1 Features	3	Description
+
+� Unless Otherwise Noted, Typical Values at TA = 25�C, VS = 5 V.
+
+The LMP7721 is the industry�s lowest specified input bias current precision amplifier. The ultra-low input
+
+� Input Bias Current (VCM = 1 V)
+
+bias current is 3 fA, with a specified limit of �20 fA at
+25�C and �900 fA at 85�C. This is achieved with the
+
+� Maximum at 25�C �20 fA	latest patent-pending technology of input bias current
+
+� Maximum at 85�C �900 fA
+� Offset Voltage �26 �V
+
+cancellation amplifier circuitry. This technology also maintains the ultra-low input bias current over the entire input common-mode voltage range of the
+
+� Offset Voltage Drift ?1.5 ?V/�C	amplifier.
+� DC Open-Loop Gain 120 dB	Other outstanding features, such as low voltage noise
+� DC CMRR 100 dB	(6.5   nV/?Hz),   low   DC-offset   voltage   (�150   �V
+
+� Input Voltage Noise (at f = 1 kHz) 6.5 nV/?Hz
+� THD 0.0007%
+
+maximum at 25�C) and low-offset voltage temperature coefficient (?1.5 �V/�C), improve system sensitivity and accuracy in high-precision
+
+� Supply Current 1.3 mA	applications. With a supply voltage range of 1.8 V to
+
+� GBW 17 MHz
+� Slew Rate (Falling Edge) 12.76 V/?s
+� Supply Voltage 1.8 V to 5.5 V
+� Operating Temperature Range -40�C to +125�C
+5.5 
+V, the LMP7721 is the ideal choice for battery- operated, portable applications. The LMP7721 is part of the LMP� precision amplifier family.
+As part of Texas Instruments' PowerWise� products, the LMP7721 provides the remarkably wide-gain
+
+� 8-Pin SOIC	bandwidth	product	(GBW)	of	17	MHz	while
+consuming only 1.3 mA of current. This wide GBW
+2 Applications	along with the high open-loop gain of 120 dB enables
+
+� Photodiode Amplifier
+� High Impedance Sensor Amplifier
+
+accurate signal conditioning. With these specifications, the LMP7721 has the performance to excel in a wide variety of applications such as
+
+� Ion Chamber Amplifier	electrochemical cell amplifiers and sensor interface
+
+� Electrometer Amplifier
+
+circuits.
+
+� pH Electrode Amplifier	The LMP7721 is offered in an 8-pin SOIC package
+
+� Transimpedance Amplifier
+
+Ultra-Low Input Bias Current
+5
+
+
+0
+
+with a special pinout that isolates the amplifier�s input from the power supply and output pins. With proper board layout techniques, the unique pinout of the LMP7721 will prevent PCB leakage current from reaching the input pins. Thus system error will be further reduced.
+
+
+
+-5
+
+
+-10
+
+
+-15
+
+Device Information(1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+LMP7721
+SOIC (8)
+4.90 mm � 3.90 mm
+(1) For all available packages, see the orderable addendum at the end of the datasheet.
+
+
+
+-20
+0
+
+
+0.5	1
+
+
+1.5	2
+
+
+2.5
+
+
+3	3.5
+
+VCM (V)
+
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+LMR36006-Q1
+SNVSAY7C � AUGUST 2018 � REVISED OCTOBER 2019
+
+LMR36006-Q1 4.2-V to 60-V, 0.6-A Ultra-Small Synchronous Step-Down Converter
+
+1 Features
+� AEC-Q100-qualified for automotive applications:
+� Temperature grade 1: �40�C to +125�C, TA
+� Designed for automotive applications
+� Junction temperature range �40�C to +150�C
+� Protection features: thermal shutdown, input undervoltage lockout, cycle-by-cycle current limit, hiccup short-circuit protection
+� 0.2-V dropout with 0.6-A load (typical)
+� �1.5% reference voltage tolerance
+� 3.3-V fixed-output voltage option available
+� Suited for scalable power supplies
+� Pin compatible with:
+� LMR36015-Q1 (60 V, 1.5 A)
+� LMR33620/30-Q1 (36 V, 2 A, or 3 A)
+� 400-kHz, 2.1-MHz frequency options
+� Integration reduces solution size and cost
+� Small, 2-mm � 3-mm VQFN package with wettable flanks
+� Few external components
+� Low power dissipation across load spectrum
+� 94% efficiency at 400 kHz (12VIN, 5VOUT, 0.6A)
+� Increased light load efficiency in PFM
+� Low operating quiescent current of 26 �A
+� Optimized for ultra low EMI requirements
+� Meets CISPR25 class 5 standard
+� Hotrod� package minimizes switch node ringing
+� Parallel input path minimizes parasitic inductance
+� Spread spectrum reduces peak emissions
+� Create a custom design using the LMR36006-Q1 with the WEBENCH� Power Designer
+2 
+Applications
+� ADAS camera module
+� Body control module
+
+3 Description
+The LMR36006-Q1 regulator is an easy-to-use, synchronous, step-down DC/DC converter. With integrated high-side and low-side power MOSFETs, up to 0.6 A of output current is delivered over a wide input voltage range of 4.2V to 60V. Tolerance goes up to 66 V.
+The LMR36006-Q1 uses peak-current-mode control to provide optimal efficiency and output voltage accuracy. Advanced high speed circuitry allows the LMR36006-Q1 to regulate from an input of 20 V to an output of 5 V at a fixed frequency of 2.1 MHz. Precision enable gives flexibility by enabling a direct connection to the wide input voltage or precise control over device start-up and shutdown. The power-good flag, with built-in filtering and delay, offers a true indication of system status eliminating the requirement for an external supervisor.
+The LMR36006-Q1 is in a HotRod� package which enables low EMI, higher efficiency, and the smallest package to die ratio. The device requires few external components and has a pinout designed  for simple PCB layout. The small solution size and feature set of the LMR36006-Q1 are designed to simplify implementation for a wide range of end equipment.
+
+Device Information(1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+LMR36006-Q1
+VQFN-HR (12)
+2.00 mm � 3.00 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+
+
+
+
+Simplified Schematic
+
+VIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+SN65HVDA100-Q1
+SLIS128C � NOVEMBER 2011 � REVISED JULY 2015
+
+SN65HVDA100-Q1 LIN Physical Interface
+1 Features	3	Description
+
+� Qualified for Automotive Applications
+� Local Interconnect Network (LIN) Physical Layer Specification Revision 2.1 Compliant and
+
+The SN65HVDA100 device is the Local Interconnect Network (LIN) physical interface, which integrates the serial transceiver with wakeup and protection features. The LIN bus is a single-wire bidirectional
+
+Conforms to SAEJ2602 Recommended Practice	bus typically used for low-speed in-vehicle networks for LIN	using data rates from 2.4 kbps to 20 kbps. The LIN
+
+� Extended Operation With Supply From 5 V to 27 V DC (LIN Specification 7 V to 18 V)
+� LIN Transmit Speed up to 20-kbps LIN Specified Maximum, High-Speed Receive Capable
+� Temperature range from -40�C to +125�C
+
+protocol output data stream on TXD is converted by the SN65HVDA100 into the LIN bus signal through a current-limited wave-shaping driver as outlined by the LIN Physical Layer Specification. The receiver converts the data stream from the LIN bus and
+
+� Sleep Mode: Ultra-Low Current Consumption	outputs the data stream through RXD. The LIN bus Allows Wake-Up Events From: LIN Bus, Wake-Up	has two states: dominant state (voltage near ground)
+
+Input (External Switch) or Host MCU
+� Wake-Up Request on RXD Pin
+� Wake-Up Source Recognition on TXD Pin
+
+and recessive state (voltage near battery). In the recessive state, the LIN bus is pulled high by the internal pullup resistor (30 k?) and series diode, so no external pullup components are required for slave
+
+� Interfaces to MCU With 5-V or 3.3-V I/O Pins	applications. Master applications require an external
+
+� High Electromagnetic Compatibility (EMC)
+� Control of External Voltage Regulator (INH Pin)
+
+pullup resistor (1 k?) plus a series diode per the LIN specification.
+
+� Supports ISO9141 (K-Line) -Like Functions	Device Information(1)
+� ESD Protection to �12 kV (Human Body Model) on LIN Pin
+� LIN Pin Handles Voltage From �27 V to 45 V	(1) For all available packages, see the orderable addendum at
+(Short to Battery or Ground)	the end of the data sheet.
+� Survives Transient Damage in Automotive
+
+Environment (ISO 7637)
+� Undervoltage Protection on VSUP
+� TXD Dominant State Time-Out Protection
+� Prevention of False Wakeups With Bus Stuck Dominant Fault
+� Thermal Shutdown
+� Unpowered Node or Ground Disconnection Failsafe at System Level, Node Does Not Disturb Bus (No Load on Bus)
+
+2 Applications
+� Automotive
+� Industrial Sensing
+� White Goods Distributed Control
+
+
+
+
+
+  D
+
+
+
+  
+
+
+
+ W   
+
+
+
+T D
+
+SN65HVDA100-Q1 Block Diagram
+
+
+
+
+
+   
+
+
+
+VSUP
+
+
+   
+
+
+
+G D
+
+
+
+
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+
+
+TPS51200-EP Sink and Source DDR Termination Regulator
+
+TPS51200-EP
+SLUSA48 � JUNE 2016
+
+
+1
+Features
+2
+Applications
+�
+�
+�
+Input Voltage: Supports 2.5-V Rail and 3.3-V Rail VLDOIN Voltage Range: 1.1 V to 3.5 V
+Sink and Source Termination Regulator Includes
+�
+
+�
+Memory Termination Regulator for DDR, DDR2, DDR3, Low-Power DDR3, and DDR4
+Notebooks, Desktops, and Servers
+
+Droop Compensation
+�
+Telecom and Datacom
+�
+Requires Minimum Output Capacitance of 20-?F (Typically 3 � 10-?F MLCCs) for Memory
+�
+�
+Base Stations
+LCD-TVs and PDP-TVs
+
+Termination Applications (DDR)
+� PGOOD to Monitor Output Regulation
+� EN Input
+� REFIN Input Allows for Flexible Input Tracking Either Directly or Through Resistor Divider
+� Remote Sensing (VOSNS)
+� �10-mA Buffered Reference (REFOUT)
+� Built-in Soft Start, UVLO, and OCL
+� Thermal Shutdown
+� Meets DDR and DDR2 JEDEC Specifications
+� Supports DDR3, Low-Power DDR3, and DDR4 VTT Applications
+� 10-Pin VSON Package With Thermal Pad
+� Supports Defense, Aerospace, and Medical Applications
+� Controlled Baseline
+� One Assembly and Test Site
+� One Fabrication Site
+� Available in Military (�55�C to 125�C) Temperature Range
+� Extended Product Life Cycle
+� Extended Product-Change Notification
+� Product Traceability
+� 
+Copiers and Printers
+� Set-Top Boxes
+
+3 Description
+The TPS51200-EP device is a sink and source double data rate (DDR) termination regulator specifically designed for low-input voltage, low-cost, low-noise systems where space is a key consideration.
+The TPS51200-EP maintains a fast transient response and only requires a minimum output capacitance of 20 ?F. The TPS51200-EP supports a remote sensing function and all power requirements for DDR, DDR2, DDR3, Low-Power DDR3, and DDR4 VTT bus termination.
+In addition, the TPS51200-EP provides an open-drain PGOOD signal to monitor the output regulation and an EN signal that can be used to discharge VTT during S3 (suspend to RAM) for DDR applications.
+The TPS51200-EP is available in the thermally efficient 10-pin VSON thermal pad package, and is rated both Green and Pb-free. It is specified from
+�55�C to +125�C.
+
+Device Information(1)
+
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+TPS51200-EP
+VSON (10)
+3.00 mm � 3.00 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+
+Simplified DDR Application
+Copyright � 2016, Texas Instruments Incorporated
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+TPS51604-Q1
+SLUSBT2A � JANUARY 2014 � REVISED AUGUST 2014
+
+TPS51604-Q1 Synchronous Buck FET Driver for High-Frequency CPU Core Power in Automotive Applications
+1 Features	3	Description
+
+� Qualified for Automotive Applications
+� AEC-Q100 Qualified With the Following Results:
+
+The TPS51604-Q1 drivers are optimized for high- frequency CPU VCORE applications. Advanced features such as reduced dead-time drive and auto
+
+� Device Temperature Grade 1: �40�C to +125�C	zero crossing are used to optimize efficiency over the
+
+� Device Human Body Model ESD Classification
+
+- voltage range from 2 V to 5.5 V
+
+entire load range.
+
+Level H2	The SKIP pin provides immediate CCM operation to
+
+� Device Charged Device Model ESD Classification Level C3B
+� Reduced Dead-Time Drive Circuit for Optimized CCM
+
+support controlled management of the output voltage. In addition, the TPS51604-Q1 supports two low- power modes. With the PWM input in 3-state, quiescent current is reduced to 130 �A, with immediate response. When SKIP is held at 3-state,
+
+� Automatic Zero Crossing Detection for Optimized	the current is reduced to 8 �A (typically 20 �s is
+DCM Efficiency	required   to   resume   switching).   Paired   with   the
+
+� Multiple Low-Power Modes for Optimized Light- Load Efficiency
+� Optimized Signal Path Delays for High-Frequency Operation
+� Integrated BST Switch Drive Strength Optimized
+
+appropriate TI controller, the drivers deliver an exceptionally high performance power supply system.
+The TPS51604-Q1 device is packaged in a space saving, thermally-enhanced 8-pin, 2-mm x 2-mm WSON package and operates from �40�C to +125�C.
+
+for Ultrabook FETs	Device Information(1)
+� Optimized for 5-V FET Drive
+� Conversion Input Voltage Range (VIN): 4.5 to 28 V
+� 2-mm � 2-mm, 8-Pin, WSON Power-Pad Package	(1) For all available packages, see the orderable addendum at
+the end of the data sheet.
+2 Applications
+� Automotive Rear Seat Entertainment (RSE) Tablets Using High-Frequency CPUs With the Following Power Input:
+� Adapter
+� Battery
+� NVDC
+� 5-V or 12-V Rails
+Simplified Schematic
+R1	VIN
+
+
+
+
+
+
+
+C2
+
+
+
+
+
+UDG-12234
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+Reference Design
+
+
+TPS54140A
+SLVSB55C � MAY 2012 � REVISED OCTOBER 2015
+
+TPS54140A 1.5-A, 42-V Step-Down DC/DC Converter with Eco-mode�
+1 Features	3	Description
+
+� 3.5V to 42V Input Voltage Range
+� 200-m? High-Side MOSFET
+� -40�C to +125�C Temperature range
+
+The TPS54140A device is a 42-V, 1.5-A, step-down regulator with an integrated high-side MOSFET. Current-mode control provides simple external
+
+� High Efficiency at Light Loads with a Pulse	compensation and flexible component selection. A Skipping Eco-mode�	low ripple-pulse skip mode reduces the no-load,
+
+� Tighter Enable Threshold than TPS54140 for More Accurate UVLO Voltage
+� Adjustable UVLO Voltage and Hysteresis
+� 116-?A Operating Quiescent Current
+� 1.3-?A Shutdown Current
+
+regulated output supply current to 116 ?A. Using the enable pin, shutdown supply current is reduced to 1.3 ?A.
+Undervoltage lockout is internally set at 2.5 V, but can be increased using the enable pin. The output voltage startup ramp is controlled by the slow start
+
+� 100-kHz to 2.5-MHz Switching Frequency	pin	that	can	also	be	configured	for
+
+� Synchronizes to External Clock
+� Adjustable Slow Start/Sequencing
+� UV and OV Power Good Output
+� 0.8-V Internal Voltage Reference
+
+sequencing/tracking. An open drain power good signal indicates the output is within 94% to 107% of its nominal voltage.
+A wide switching frequency range allows efficiency and external component size to be optimized.
+
+� MSOP10 and 3-mm � 3-mm VSON-10 Package	Frequency fold back and thermal shutdown protects With PowerPAD�	the part during an overload condition.
+� Supported by WEBENCH� and SwitcherPro�
+
+Software Tool
+
+2 Applications
+� 12-V and 24-V Industrial and Commercial Low Power Systems
+� Aftermarket Auto Accessories: Video, GPS, Entertainment
+
+Device Information(1)
+
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+
+TPS54140A
+VSON (10)
+3.00 mm � 3.00 mm
+
+MSOP (10)
+3.00 mm � 3.00 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+
+
+Simplified Schematic
+
+
+
+
+
+
+
+
+
+VOUT
+
+
+Efficiency vs Load Current
+90
+
+85
+
+80
+
+75
+
+70
+
+
+65
+
+60
+
+55
+
+50
+0	0.25     0.50     0.75	1	1.25     1.50     1.75	2
+Load Current - A
+
+
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+TPS54361-Q1
+SLVSCC4B � APRIL 2014 � REVISED JANUARY 2017
+
+TPS54361-Q1 4.5V to 60V Input, 3.5-A, Step Down DC-DC Converter with Soft-Start and Eco-mode�
+
+1 Features
+� Qualified for Automotive Applications
+� AEC-Q100 Qualified With the Following Results:
+� Device Temperature Grade 1: �40�C to +125�C Ambient Operating Temperature Range
+� Device HBM ESD Classification Level H1C
+� Device CDM ESD Classification Level C3B
+� High Efficiency at Light Loads with Pulse Skipping Eco-mode�
+� 87-m? High-Side MOSFET
+� 152-?A Operating Quiescent Current and 2-?A Shutdown Current
+� 100-kHz to 2.5-MHz Adjustable Switching Frequency
+� Synchronizes to External Clock
+� Low Dropout at Light Loads with Integrated BOOT Recharge FET
+� Adjustable UVLO Voltage and Hysteresis
+� UV and OV Power Good Output
+� Adjustable Soft-Start and Sequencing
+� 0.8-V 1% Internal Voltage Reference
+� 10-Pin WSON with Thermal Pad Package
+� �40�C to +150�C TJ Operating Range
+� Create a Custom Design using the TPS54361-Q1 with the WEBENCH� Power Designer
+
+2 Applications
+� Vehicle Accessories: GPS (see SLVA412), Entertainment
+� USB Dedicated Charging Ports and Battery Chargers (see SLVA464)
+� 12-V, 24-V and 48-V Industrial, Automotive and Communications Power Systems
+Simplified Schematic
+3 
+Description
+The TPS54361-Q1 device is a 60-V, 3.5-A, step down regulator with an integrated high side MOSFET. The device survives load dump pulses up to 65 V per ISO 7637. Current mode control provides simple external compensation and flexible component selection. A low ripple pulse skip mode and supply current of 152-�A enables high efficiency at light loads. Shutdown supply current is reduced to 2 ?A when the enable pin is pulled low.
+Undervoltage lockout is internally set at 4.3 V but can increase using an external resistor divider at the enable pin. The output voltage startup ramp is controlled by the soft start pin that can also be configured for sequencing/tracking. An open-drain power-good signal indicates the output is within 93% to 106% of the nominal voltage.
+A wide adjustable switching-frequency range allows for optimization of either efficiency or external component size. Cycle-by-cycle current-limit, frequency foldback and thermal shutdown protects internal and external components during an overload condition.
+The TPS54361-Q1 device is available in a 10-pin 4 mm � 4 mm WSON exposed thermal pad package.
+
+Device Information(1)
+
+DEVICE NAME
+PACKAGE
+BODY SIZE
+TPS54361-Q1
+WSON (10)
+4.00 mm � 4.00 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+
+
+
+
+
+
+
+Efficiency vs Load Current
+
+
+100
+
+95
+
+90
+
+85
+
+80
+
+75
+
+70
+
+65
+
+60
+0	0.5	1	1.5	2	2.5	3	3.5
+
+Output Current (A)
+
+
+D029
+
+
+Copyright � 2016, Texas Instruments Incorporated
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Sample & Buy
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+
+
+
+
+1 Features
+
+TPS60400-Q1, TPS60401-Q1, TPS60402-Q1, TPS60403-Q1
+SGLS246B � JUNE 2004 � REVISED OCTOBER 2016
+TPS6040x-Q1 Unregulated 60-mA Charge Pump Voltage Inverter
+3	Description
+
+� Qualified for Automotive Applications
+� AEC-Q100 Test Guidance With the Following Results:
+� Device Temperature Grade 1: �40�C to
++125�C Ambient Operating Temperature Range
+� Device HBM ESD Classification Level 2
+� Device CDM ESD Classification Level C6
+� Inverts Input Supply Voltage
+� Up to 60-mA Output Current
+� Only Three Small 1-�F Ceramic Capacitors Needed
+� Input Voltage Range From 1.8 V to 5.25 V
+� PowerSave-Mode for Improved Efficiency at Low Output Currents (TPS60400-Q1)
+� Device Quiescent Current Typical: 100 �A
+� Integrated Active Schottky-Diode for Start-Up Into Load
+� Small 5-Pin SOT23 Package
+� Evaluation Module Available: TPS60400EVM-178
+
+2 Applications
+� Automotive Infotainment
+� Automotive Cluster
+� LCD Displays
+� Negative Supply Voltages
+Typical Application Circuit
+
+The TPS6040x-Q1 family of devices generate an unregulated negative output voltage from an input voltage ranging from 1.8 V to 5.25 V. The devices are typically supplied by a preregulated supply rail of 5 V or 3.3 V. Due to its wide-input voltage range, two or three NiCd, NiMH, or alkaline battery cells, as well as one Li-Ion cell, can also power them.
+Only three external 1-?F capacitors are required to build a complete DC-DC charge pump inverter. Assembled in a 5-pin SOT-23 package, the complete converter can be built on a 50-mm2 board area. Replacing the Schottky diode typically needed for start-up into load with integrated circuitry can achieve additional board area and component count reduction.
+The TPS6040x-Q1 can deliver a maximum output current of 60 mA, with a typical conversion efficiency of greater than 90% over a wide output current range. Three device options TPS60401/2/3-Q1 with 20-kHz, 50-kHz, and 250-kHz fixed frequency operation are available. TPS60400-Q1 device comes with a variable switching frequency to reduce operating current in applications with a wide load range and enables the design with low-value capacitors.
+
+Device Information(1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+TPS6040x-Q1
+SOT-23 (5)
+2.80 mm � 2.90 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+Output Voltage vs Input Voltage
+
+0
+
+
+
+
+Input
+1.8 V to 5.25 V
+
+?1
+Output
+?1.6 V to ?5 V,
+Max 60 mA	?2
+
+
+?3
+Copyright � 2016, Texas Instruments Incorporated
+
+?4
+
+?5
+0	1	2	3	4	5
+VI ? Input Voltage ? V
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+TPS62140, TPS62140A, TPS62141, TPS62142, TPS62143
+SLVSAJ0E � NOVEMBER 2011 � REVISED SEPTEMBER 2016
+
+TPS6214x 3-V to 17-V 2-A Step-Down Converter in 3 � 3 QFN Package
+
+1 Features
+� DCS-ControlTM Topology
+� Input Voltage Range: 3 V to 17 V
+� Up to 2-A Output Current
+� Adjustable Output Voltage from 0.9 V to 6 V
+� Pin-Selectable Output Voltage (Nominal, +5%)
+� Programmable Soft Start and Tracking
+� Seamless Power-Save Mode Transition
+� Quiescent Current of 17 �A (Typical)
+� Selectable Operating Frequency
+� Power-Good Output
+� 100% Duty-Cycle Mode
+� Short-Circuit Protection
+� Over Temperature Protection
+� Pin to Pin Compatible with TPS62130 and TPS62150
+� Available in a 3-mm � 3-mm, VQFN-16 Package
+� Temperature range -40�C to +125�C
+
+2 Applications
+� Standard 12-V Rail Supplies
+� POL Supply From Single or Multiple Li-Ion Battery
+� Solid-State Disk Drives
+� Embedded Systems
+� LDO Replacement
+� Mobile PCs, Tablet, Modems, Cameras
+� Server, Microserver
+� Data Terminal, Point of Sales (ePOS)
+3 
+Description
+The TPS6214x family is an easy-to-use synchronous step-down DC-DC converter optimized for applications with high power density. A high switching frequency of typically 2.5 MHz allows the use of small inductors and provides fast transient response by use of the DCS-Control� topology.
+With their wide operating input voltage range of 3 V to 17 V, the devices are ideally suited for systems powered from either a Li-Ion or other batteries, as well as from 12-V intermediate power rails. It supports up to 2 A of continuous output current at output voltages between 0.9 V and 6 V (with 100% duty-cycle mode). The output voltage start-up ramp is controlled by the soft-start pin, which allows operation as either a standalone power supply or in tracking configurations. Power sequencing is also possible by configuring the Enable (EN) and open-drain Power Good (PG) pins.
+In Power Save Mode, the devices draw quiescent current of about 17 ?A from VIN. Power Save Mode, entered automatically and seamlessly if the load is small, maintains high efficiency over the entire load range. In Shutdown Mode, the device is turned off and current consumption is less than 2 ?A.
+The device, available in adjustable and fixed output voltage versions, is packaged in a 16-pin VQFN package measuring 3 mm � 3 mm (RGT).
+
+Device Information(1)
+
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+TPS6214x
+VQFN (16)
+3.00 mm x 3.00 mm
+(1) For all available packages, see the orderable addendum at the end of the datasheet.
+
+
+Typical Application Schematic	Efficiency vs Output Current
+100
+
+90
+
+80
+
+70
+
+60
+Copyright � 2016, Texas Instruments Incorporated
+
+50
+
+40
+0.0	0.4	0.8	1.2	1.6	2.0
+
+Output Current (A)
+
+
+G001
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+TPS65320D-Q1
+SLVSE56 � NOVEMBER 2017
+
+TPS65320D-Q1 36-V Step-Down Converter With Eco-mode� and LDO Regulator
+
+1 Features
+� Qualified for Automotive Applications
+� AEC-Q100 Qualified with the Following Results:
+� Device Temperature Grade 1: �40�C to
++125�C Ambient Operating Temperature
+� Device HBM ESD Classification Level 2
+� Device CDM ESD Classification Level C4B
+� One High-VIN Step-Down DC-DC Converter
+� Input Range of 3.6 V to 36 V
+� 250-m? High-Side MOSFET
+� Maximum Load Current 3.2 A, Output Adjustable 1.1 V to 20 V
+� Adjustable Switching Frequency 100 kHz to
+2.5 MHz
+� Synchronizes to External Clock
+� High Efficiency at Light Loads With Pulse- Skipping Eco-mode� Control Scheme
+� Maximum 140-�A Operating Quiescent Current
+� One Low-Dropout Voltage (LDO) Regulator
+� Input Range of 3 V to 20 V, With Auto-Source to Balance Efficiency and Lower Standby Current
+� 280-mA Current Capability With Typical 35-�A Quiescent Current in No-Load Condition
+� Power-Good Output (Push-Pull)
+� Low-Dropout Voltage of 300 mV at IO = 200 mA (Typical)
+� Overcurrent Protection for Both Regulators
+� Overtemperature Protection
+� 14-Pin HTSSOP Package With PowerPAD� Integrated Circuit Package
+
+
+Typical Application Schematic
+2 
+Applications
+� Automotive Infotainment and Cluster
+� Advanced Driver Assistance System (ADAS)
+� Automotive Telematics, eCall
+
+3 Description
+The TPS65320D-Q1 device is a combination of a high-VIN DC-DC step-down converter, referred to as the buck regulator, with an adjustable switch-mode frequency from 100-kHz to 2.5-MHz, and a high-VIN 280-mA low-dropout (LDO) regulator. The input range is 3.6 V to 36 V for the buck regulator, and 3 V to
+36 V for the LDO regulator. The buck regulator has an integrated high-side MOSFET. The LDO regulator features a low-input supply current of 45-?A typical in no-load, also has an integrated MOSFET with an active-low, push-pull reset output pin. The input supply of the LDO regulator auto-source from the output of the buck regulator when it is in operation. Low-voltage tracking feature enables TPS65320D-Q1 to track the input supply during cold-crank conditions.
+The buck regulator provides a flexible design to fit system needs. The external loop compensation circuit allows for optimization of the converter response for the appropriate operating conditions. A low-ripple pulse-skip mode reduces the no-load input-supply current to maximum 140 ?A.
+The device has built-in protection features such as soft start, current-limit, thermal sensing and shutdown due to excessive power dissipation. Furthermore, the device has an internal undervoltage-lockout (UVLO) function that turns off the device when the supply voltage is too low.
+
+Device Information(1)
+PART NUMBER
+PACKAGE
+BODY SIZE (NOM)
+TPS65320D-Q1
+HTSSOP (14)
+5.00 mm � 4.40 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+Buck Efficiency Versus Output Current
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+
+0	1	2	3	4
+
+Load Current (A)
+
+D001
+
+
+Copyright � 2017, Texas Instruments Incorporated
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+
+TPS65919-Q1
+SLVSDM1A � AUGUST 2017 � REVISED FEBRUARY 2019
+
+TPS65919-Q1 Power Management Unit (PMU) for Processor
+1 Device Overview
+
+
+1.1 Features
+� Qualified for Automotive Applications
+� AEC-Q100 Qualified With the Following Results:
+� Device Temperature Grade 2: �40�C to +105�C Ambient Operating Temperature Range
+� Device HBM Classification Level 2
+� Device CDM Classification Level C4B
+� System Voltage Range from 3.135 V to 5.25 V
+� Low-Power Consumption
+� 20 ?A in Off Mode
+� 90 ?A in Sleep Mode With Two SMPSs Active
+� Four Step-Down Switched-Mode Power Supply (SMPS) Regulators:
+� 0.7- to 3.3-V Output Range in 10- or 20-mV Steps
+� Two SMPS Regulators With 3.5-A Capability, With the Ability to Combine into 7-A Output in Dual-Phase Configuration, With Differential Remote Sensing (Output and Ground)
+� Two Other SMPS Regulators with 3-A and 1.5-A Capabilities
+� Dynamic Voltage Scaling (DVS) Control and Output Current Measurement in 3.5-A and 3-A SMPS Regulators
+� Hardware and Software Controlled Eco-mode� Supplying up to 5 mA
+� Short-Circuit Protection
+� Power-Good Indication (Voltage and Overcurrent Indication)
+� Internal Soft-Start for In-Rush Current Limitation
+� Ability to Synchronize to External Clock between
+1.7 MHz and 2.7 MHz
+1.2 Applications
+� Automotive Digital Cluster
+� Automotive Advanced Driver Assistance System (ADAS)
+1.3 Description
+
+
+
+� Four Low-Dropout (LDO) Linear Regulators:
+� 0 .9- to 3.3-V Output Range in 50-mV steps
+� Two With 300-mA Capability and Bypass Mode
+� One With 100-mA Capability and Capable of Low-Noise Performance up to 50 mA
+� One LDO With 200-mA Current Capability
+� Short-Circuit Protection
+� 12-Bit Sigma-Delta General-Purpose ADC (GPADC) With 8 Input Channels (2 external)
+� Thermal Monitoring With High Temperature Warning and Thermal Shutdown
+� Power Sequence Control:
+� Configurable Power-Up and Power-Down Sequences (OTP)
+� Configurable Sequences Between the SLEEP and ACTIVE State Transition (OTP)
+� Three Digital Output Signals that can be Included in the Startup Sequence
+� Selectable Control Interface:
+� One SPI for Resource Configurations and DVS Control
+� Two I2C Interfaces.
+� One Dedicated for DVS Control
+� One General Purpose I2C Interface for Resource Configuration and DVS Control
+� OTP Bit-Integrity Error Detection With Options to Proceed or Hold Power-Up Sequence and RESET_OUT Release
+� Package Option:
+� 7-mm � 7-mm 48-pin With 0.5-mm Pitch
+
+
+� Automotive Navigation Systems
+
+The TPS65919-Q1 PMIC integrates four configurable step-down converters with up to 3.5 A of output current to power the processor core, memory, I/O, and preregulation of LDOs The device is AEC-Q100 qualified. The step-down converters are synchronized to an internal 2.2-MHz clock to improve EMC performance of the device. The GPIO_3 pin allows the step-down converters to synchronize to an external clock, allowing multiple devices to synchronize to the same clock which improves system-level EMC performance. The device also contains four LDOs to power low-current or low-noise domains.
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Product Folder
+
+Order Now
+
+Technical Documents
+
+Tools & Software
+
+Support & Community
+
+
+TPSM84209
+SLVSE31C � JANUARY 2018 � REVISED JULY 2018
+
+TPSM84209 4.5V to 28V Input, 1.2V to 6V Output, 2.5-A Power Module
+
+1 Features
+� Complete Integrated Power Solution Allows Small Footprint, Low-Profile Design
+� 4.5-mm � 4-mm � 2-mm QFN Package
+� Wide-Output Voltage Range (1.2 V to 6 V)
+� Fixed Switching Frequency (750 kHz)
+� Advanced Eco-mode� for Light Load Efficiency
+� Programmable Undervoltage Lockout (UVLO)
+� Overtemperature Thermal Shutdown Protection
+� Overcurrent Protection (Hiccup Mode)
+� Safe Prebias Output Start-Up
+� Operating IC Junction Range: �40�C to +125�C
+� Operating Ambient Range: �40�C to +85�C
+� Enhanced Thermal Performance: 29.5�C/W
+� Meets EN55011 Radiated EMI Standards
+� Integrated Shielded Inductor
+� Create a Custom Design Using the TPSM84209 With the WEBENCH� Power Designer
+2 Applications
+� Industrial and Motor Controls
+� Automated Test Equipment
+� Medical and Imaging Equipment
+� High-Density Power Systems
+3 
+Description
+The TPSM84209 power module is an easy-to-use integrated power supply that combines a 2.5-A DC/DC converter with a shielded inductor and passives into a low-profile QFN package. This total power solution allows as few as four external components while maintaining an ability to adjust key parameters to meet specific design requirements.
+The wide input voltage range and small package size of the TPSM84209 makes the device an excellent fit for power rails that require up to 2.5 A of output current.
+The QFN package is easy to solder to a printed circuit board and has excellent power dissipation capability. The TPSM84209 offers flexibility with many features and is ideal for powering a wide range of devices and systems.
+
+Device Information(1)
+
+DEVICE NUMBER
+PACKAGE
+BODY SIZE
+TPSM84209H
+QFN (9)
+4.50 mm � 4.00 mm
+(1) For all available packages, see the orderable addendum at the end of the data sheet.
+
+
+
+
+
+
+
+
+
+VIN
+
+Simplified Application
+
+
+
+
+
+VOUT
+
+
+
+
+100
+
+90
+
+80
+
+70
+
+
+Efficiency vs Output Current
+
+
+60
+Copyright � 2018, Texas Instruments Incorporated
+
+50
+
+
+40
+0.0	0.5	1.0	1.5
+Output Current (A)
+
+
+2.0	2.5
+Eff
+
+
+
+
+
+
+
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, intellectual property matters and other important disclaimers. PRODUCTION DATA.
