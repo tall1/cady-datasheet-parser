@@ -33,7 +33,7 @@ class DatasheetParser:
 
     def parse_voltage_ranges(self) -> None:
         # Parses the file and find all the voltage ranges:
-        with open(file=self.file_path_, mode='r', encoding="utf-8", errors='ignore') as file:
+        with open(file=self.file_path_, mode='r', encoding="windows-1252", errors='ignore') as file:
             print("open file: " + self.file_path_)
             content = file.read()
 
