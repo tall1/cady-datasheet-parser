@@ -1,4 +1,4 @@
-# Tal Lev - Cady Exam:
+# Cady datasheet parser:
 ## Description
 Python program that parses component datasheets files in a given folder.
 Parses voltage and temperature ranges.
@@ -13,6 +13,6 @@ Prints:
 ## To run:
 With a python 3.10+ interpreter:
 ```commandline
-python /path/to/main.py <voltage-requirement> <temperature-requirement>
+python /path/to/main.py <path-to-folder-with-datasheets> <voltage-requirement> <temperature-requirement>
 ```
 **Note**: voltage and temperature requirements can be either int or float. No need for measurement unit string (V or C etc.)
