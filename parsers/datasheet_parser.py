@@ -33,7 +33,7 @@ class DatasheetParser:
 
     def parse_voltage_ranges(self) -> None:
         # Parses the file and find all the voltage ranges:
-        with open(self.file_path_, 'r') as file:
+        with open(self.file_path_, 'r', errors='ignore') as file:
             content = file.read()
 
         # Regex pattern to match voltage ranges like '2.4V to 5.1V' or '2 v to 5.1v' etc.

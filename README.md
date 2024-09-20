@@ -10,9 +10,17 @@ Recieves:
 
 Prints:
 - All the components (by file name) that match the requested voltage and temperature.
+
+## Prerequisits:
+
+- python 3.10+ interpreter
+
 ## To run:
+
 With a python 3.10+ interpreter:
 ```commandline
-python /path/to/main.py <path-to-folder-with-datasheets> <voltage-requirement> <temperature-requirement>
+python ./main.py <path-to-folder-with-datasheets> <voltage-requirement> <temperature-requirement>
 ```
-**Note**: voltage and temperature requirements can be either int or float. No need for measurement unit string (V or C etc.)
+### Important Notes: 
+- voltage and temperature requirements - int or float
+- path to folder - absolute path only!
