@@ -11,8 +11,8 @@ class ComponentsDatasheetsParser:
         self.file_paths_: list[str] = utils.get_file_paths_from_folder(folder_path)  # extract file paths from folder
         self.component_to_datasheet_parser_: dict[str, DatasheetParser] = {}
         self.parse_ranges_to_all_files()  # parse all the files
-        # for comp, dsp in self.component_to_datasheet_parser_.items():
-        #     print(f"{comp}: {dsp.to_string()}")
+        for comp, dsp in self.component_to_datasheet_parser_.items():
+            print(f"{comp}: {dsp.to_string()}")
 
     def parse_ranges_to_all_files(self) -> None:
         # Iterates all file paths and creates a DatasheetParser for each one

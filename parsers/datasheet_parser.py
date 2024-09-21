@@ -34,7 +34,6 @@ class DatasheetParser:
     def parse_voltage_ranges(self) -> None:
         # Parses the file and find all the voltage ranges:
         with open(file=self.file_path_, mode='r', encoding="windows-1252", errors='ignore') as file:
-            print("open file: " + self.file_path_)
             content = file.read()
 
         # Regex pattern to match voltage ranges like '2.4V to 5.1V' or '2 v to 5.1v' etc.
@@ -53,10 +52,10 @@ class DatasheetParser:
 
     def parse_temperature_ranges(self) -> None:
         # Parses the file and find all the temp ranges:
-        with open(self.file_path_, 'r') as file:
+        with open(file=self.file_path_, mode='r', encoding="windows-1252", errors='ignore') as file:
             content = file.read()
 
-        # Regex pattern to match voltage ranges like '–40°C to +105°C'
+        # Regex pattern to match voltage ranges like 'ï¿½40ï¿½C to +105ï¿½C'
         en_dash_symb: str = "\u2013"  # for the big '-'
         deg_symb: str = "\u00B0"  # for the deg symbol
         temperature_pattern = rf'[+-{en_dash_symb}]?\d+\s*[{deg_symb}]?c\s*to\s*[+-{en_dash_symb}]?\d+\s*[{deg_symb}]?c'
